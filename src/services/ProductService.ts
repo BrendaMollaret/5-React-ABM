@@ -5,6 +5,7 @@ export const ProductService = {
 
     
     getProducts: async (): Promise<Product[]> => {
+       
         const response = await fetch(`${BASE_URL}/products`);
         const data = await response.json();
         return data;
@@ -35,6 +36,7 @@ export const ProductService = {
     },
 
     updateProduct: async (id: number, product: Product): Promise<Product> => {
+        
         const response = await fetch(`${BASE_URL}/products/${id}`, {
             method: "PUT",
             headers: {

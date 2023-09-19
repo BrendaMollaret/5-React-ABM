@@ -43,7 +43,7 @@ const formik = useFormik({
 
 //Codificar función handleSaveUpdate (CREATE-UPDATE)
 
-const handleSaveUpdate =async (pro:Product) => {
+const handleSaveUpdate = async (pro:Product) => {
     try {
         const isNew = pro.id === 0;
         if (isNew) {

@@ -11,11 +11,15 @@ import { DeleteButton } from "../DeleteButton/DeleteButton";
 
 
 const ProductTable = () => {
+
     //Variable que va a contener los datos recibidos por la API
     const [products,setProducts] = useState<Product[]>([]);
 
     //Variable que muestra el componente Loader hasta que se reciban los datos de la API
     const [isLoading,setIsLoading] = useState(true);
+
+    //Variable que va actualizar los datos de la tabla luego de cada operacion exitosa
+    const [refreshData, setRefreshData] = useState(false);
 
     //Este hook se va a ejecutar cada vez que se renderice el componente o refreshData cambie de estado
     useEffect(() => {
@@ -60,16 +64,13 @@ const ProductTable = () => {
         setShowModal(true);
         };
 
-//Variable que va actualizar los datos de la tabla luego de cada operacion exitosa
-        const [refreshData, setRefreshData] = useState(false);
 
   return (
     <>
 
     {isLoading ? <Loader/>: (
 
-        
-    
+            
         <Table Hover>
             <thead>
                 <tr>

@@ -8,8 +8,8 @@ const CarouselHome = () => {
       <img 
       className='d block w-100'
       style={{maxHeight: "500px", objectFit: 'cover'}}
-      src="src/assets/images/slide1.jpg" 
-      alt="" 
+      src="https://i.pinimg.com/564x/ae/7b/b5/ae7bb52725ace802fa56b8647203b0fb.jpg" 
+      alt="slide 1" 
       
       />
       <Carousel.Caption>
@@ -22,7 +22,7 @@ const CarouselHome = () => {
       <img 
       className='d block w-100'
       style={{maxHeight: "500px", objectFit: 'cover'}}
-      src="src/assets/images/slide 2.jpg" alt="" />
+      src="https://i.pinimg.com/564x/84/bb/80/84bb80a5e0ce779fca4c1f6a4d444987.jpg" alt="slide2" />
 
       <Carousel.Caption>
         <h3>Second slide label</h3>
@@ -35,7 +35,7 @@ const CarouselHome = () => {
       <img 
       className='d block w-100'
       style={{maxHeight: "500px", objectFit: 'cover'}}
-      src="src/assets/images/slide 3.jpg" alt="" />
+      src="https://i.pinimg.com/564x/d9/cf/27/d9cf27659fbd89db5d31babef06d4baa.jpg" alt="slide3" />
       <Carousel.Caption>
         <h3>Third slide label</h3>
         <p>

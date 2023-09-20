@@ -16,7 +16,7 @@ const AboutUs = () => {
                 <div className="card">
                     <img 
                     className="card-img-top" 
-                    src="src/assets/images/aboutUsCard1.jpg" 
+                    src="https://i.pinimg.com/564x/7d/2b/0c/7d2b0c6c10a87010e3f1baa29f5667bc.jpg" 
                     alt="aboutUsCard1" 
                     />
                     <div className="card-body">
@@ -32,7 +32,7 @@ const AboutUs = () => {
                 <div className="card">
                     <img 
                     className="card-img-top" 
-                    src="src/assets/images/aboutUsCard2.jpg" 
+                    src="https://i.pinimg.com/564x/ce/8b/82/ce8b820af3418338a39e1c6d4933fd39.jpg" 
                     alt="aboutUsCard1" 
                     />
                     <div className="card-body">
@@ -48,7 +48,7 @@ const AboutUs = () => {
                 <div className="card">
                     <img 
                     className="card-img-top" 
-                    src="src/assets/images/aboutUsCard3.jpg" 
+                    src="https://i.pinimg.com/564x/d6/61/16/d6611692bb0513cb6b347eb7eba95ad1.jpg" 
                     alt="aboutUsCard1" 
                     />
                     <div className="card-body">

@@ -1,48 +1,57 @@
-import { Button, Form, Modal } from "react-bootstrap";
 import { Product } from "../../types/Product";
+
+import { Button, Form, Modal } from "react-bootstrap";
 import { ModalType } from "../../types/enum";
+
+//Dependencias para validar los formularios
 import * as Yup from "yup";
 import { useFormik } from "formik";
+
 import { ProductService } from "../../services/ProductService";
 
 //Notificaciones al usuario
 import { toast } from 'react-toastify';
+
+
 import React from "react";
 
-
+//Recibe parametros como props para que se renderice, su titulo y según qué operación queremos realizar.
 type ProductModalProps = {
     show: boolean;
     onHide: () => void;
-    title: string
+    title: string;
     modalType: ModalType;
     prod: Product;
     refreshData: React.Dispatch<React.SetStateAction<boolean>>;
+    
 };
 
 
-
-//YUP
-
-const validationSchema = Yup.object().shape({
+//YUP - Esquema de validación
+const validationSchema = () => {
+    return Yup.object().shape({
     id: Yup.number().integer().min(0),
     title: Yup.string().required('El titulo es requerido'),
     price: Yup.number().min(0).required('El precio es requerido'),
     description: Yup.string().required('La descripcion es requerida'),
     category: Yup.string().required('La categoria es requerida'),
     image: Yup.string().required('La URL de la imagen es requerida'),
-  });
+    });
+    };
+    
 
-//Formik
+//Formik -  Utiliza el esquema de validación de YUP y obtiene un formulario dinámico que
+// bloquea el formulario en caso de haber errores.
 const formik = useFormik({
     initialValues: prod,
     validationSchema: validationSchema(),
     validateOnChange: true,
     validateOnBlur: true,
     onSubmit: (obj: Product) => handleSaveUpdate(obj),
-});
+    });
+
 
 //Codificar función handleSaveUpdate (CREATE-UPDATE)
-
 const handleSaveUpdate = async (pro:Product) => {
     try {
         const isNew = pro.id === 0;
@@ -63,9 +72,9 @@ const handleSaveUpdate = async (pro:Product) => {
     
 };
 
-//Función handleDelete (DELETE)
 
-const handleDelete =async () => {
+//Función handleDelete (DELETE)
+const handleDelete = async () => {
     try {
         await ProductService.deteleProduct(prod.id);
         toast.success("Producto borrado", {
@@ -109,21 +118,26 @@ const ProductModal = ({show, onHide, title, modalType, prod, refreshData
                     </Button>
 
                     <Button variant="danger" onClick={handleDelete}>
-                        Cancelar
+                        Borrar
                     </Button>
                 </Modal.Footer>
 
 
                 </>
             ) : (
+
                 <>
                 <Modal show={show} onHide={onHide} centered backdrop="static" className="modal-xl">
+                    
                     <Modal.Header closeButton>
                         <Modal.Title>{title}</Modal.Title>
                     </Modal.Header>
+
                     <Modal.Body>
 
+                    {"Formulario"}
                     <Form onSubmit={formik.handleSubmit}>
+                        
                         <Form.Group controlId="formTitulo">
                             <Form.Label>Titulo</Form.Label>
                             <Form.Control

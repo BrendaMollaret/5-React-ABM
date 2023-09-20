@@ -17,4 +17,4 @@ export const DeleteButton = ({onClick}:DeleteButtonProps) => {
   )
 }
 
-export default D
+export default DeleteButton

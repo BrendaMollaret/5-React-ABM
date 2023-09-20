@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react"
 import { Product } from "../../types/Product"
 import { ProductService } from "../../services/ProductService";
+import Loader from "../Loader/Loader";
+
+
 import { Table } from "react-bootstrap-icons";
 import { ModalType } from "../../types/enum";
 import { Button } from "react-bootstrap";
-import Loader from "../Loader/Loader";
+
 import ProductModal from "../ProductModal/ProductModal";
 import EditButton from "../EditButton/EditButton";
 import { DeleteButton } from "../DeleteButton/DeleteButton";
@@ -13,10 +16,10 @@ import { DeleteButton } from "../DeleteButton/DeleteButton";
 const ProductTable = () => {
 
     //Variable que va a contener los datos recibidos por la API
-    const [products,setProducts] = useState<Product[]>([]);
+    const [products, setProducts] = useState<Product[]>([]);
 
     //Variable que muestra el componente Loader hasta que se reciban los datos de la API
-    const [isLoading,setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
 
     //Variable que va actualizar los datos de la tabla luego de cada operacion exitosa
     const [refreshData, setRefreshData] = useState(false);
@@ -35,43 +38,44 @@ const ProductTable = () => {
     }, [refreshData]);
 
     //Test, este log está modificado para que muestre los datos de una manera más legible
-    console.log(JSON.stringify(products,null,2));
+    console.log(JSON.stringify(products, null, 2));
 
 
-    //Se inicializa un producto vacio cuando vallamos a crear uno nuevo, para evitar "undefined"
+    //Se inicializa un producto vacio cuando vayamos a crear uno nuevo, para evitar "undefined"
         const initializeNewProduct = (): Product => {
         return {
-        id: 0,
-        title: "",
-        price: 0,
-        description: "",
-        category: "",
-        image: "",
-        };
-        };
-        //Producto seleccionado que se va a pasar como prop al Modal
+            id: 0,
+            title: "",
+            price: 0,
+            description: "",
+            category: "",
+            image: "",
+            };
+    };
+
+    //Producto seleccionado que se va a pasar como prop al Modal
         const [product, setProduct] = useState<Product>(initializeNewProduct);
-        //Manejo de Modal
+    
+    //Manejo de Modal
         const [showModal, setShowModal] = useState(false);
         const [modalType, setModalType] = useState<ModalType>(ModalType.NONE);
         const [title, setTitle] = useState("");
-        //Logica de Modal
-        const handleClick = (newTitle: string, prod: Product, modal:
-        ModalType) => {
+
+    //Logica de Modal
+        const handleClick = (newTitle: string, prod: Product, modal: ModalType) => {
         setTitle(newTitle);
         setModalType(modal)
         setProduct(prod);
         setShowModal(true);
-        };
+    };
 
 
   return (
     <>
 
     {isLoading ? <Loader/>: (
-
-            
-        <Table Hover>
+           
+        <Table>
             <thead>
                 <tr>
                     <th> TITULO </th>
@@ -98,6 +102,8 @@ const ProductTable = () => {
                     </tr>
                 ))}
             </tbody>
+
+            {/* Botón para que cuando el usuario haga click llame a la función que declaramos */}
             <Button onClick={() => handleClick("Nuevo Producto",
                 initializeNewProduct(), ModalType.CREATE)}>
                 Nuevo Producto

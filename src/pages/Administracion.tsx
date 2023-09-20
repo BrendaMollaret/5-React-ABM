@@ -7,3 +7,5 @@ export const Administracion = () => {
     </>
   )
 }
+
+export default Administracion;

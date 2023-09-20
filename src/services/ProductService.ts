@@ -1,5 +1,6 @@
 import { Product } from "../types/Product";
-const BASE_URL = 'https://fakestoreapi.com/';
+
+const BASE_URL = 'https://fakestoreapi.com';
 
 export const ProductService = {
 
@@ -51,7 +52,7 @@ export const ProductService = {
 
     
 
-    deteleProduct: async (id:number): Promise<void> => {
+    deleteProduct: async (id:number): Promise<void> => {
         await fetch(`${BASE_URL}/products/${id}`, {
             method: "DELETE"
         });

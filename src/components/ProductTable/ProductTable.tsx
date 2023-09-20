@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react"
 import { Product } from "../../types/Product"
 import { ProductService } from "../../services/ProductService";
+
+import { Button, Table } from "react-bootstrap";
 import Loader from "../Loader/Loader";
 
 
-import { Table } from "react-bootstrap-icons";
-import { ModalType } from "../../types/enum";
-import { Button } from "react-bootstrap";
+import { ModalType } from "../../types/ModalType";
 
 import ProductModal from "../ProductModal/ProductModal";
-import EditButton from "../EditButton/EditButton";
+import { EditButton } from "../EditButton/EditButton";
 import { DeleteButton } from "../DeleteButton/DeleteButton";
 
 
@@ -71,7 +71,13 @@ const ProductTable = () => {
 
 
   return (
-    <>
+    <div className="m-3">
+
+        {/* Botón para que cuando el usuario haga click llame a la función que declaramos */}
+            <Button onClick={() => handleClick("Nuevo Producto",
+                initializeNewProduct(), ModalType.CREATE)}>
+                Nuevo Producto
+            </Button>
 
     {isLoading ? <Loader/>: (
            
@@ -103,12 +109,6 @@ const ProductTable = () => {
                 ))}
             </tbody>
 
-            {/* Botón para que cuando el usuario haga click llame a la función que declaramos */}
-            <Button onClick={() => handleClick("Nuevo Producto",
-                initializeNewProduct(), ModalType.CREATE)}>
-                Nuevo Producto
-            </Button>
-
         </Table>
 
     )}
@@ -121,15 +121,15 @@ const ProductTable = () => {
         modalType={modalType}
         prod={product}
         refreshData={setRefreshData}
+        />
         
         
-        /> 
         
         
     )}
 
     
-    </>
+    </div>
   )
 }
 

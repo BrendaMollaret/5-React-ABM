@@ -101,7 +101,7 @@ const handleDelete = async () => {
             {modalType === ModalType.DELETE ? (
                 <>
 
-                <Modal show={show} onHide={onHide} centered backdrop="static"/>
+                <Modal show={show} onHide={onHide} centered backdrop="static">
 
                 <Modal.Header closeButton>
                     <Modal.Title>{title}</Modal.Title>
@@ -123,7 +123,7 @@ const handleDelete = async () => {
                     </Button>
                 </Modal.Footer>
 
-
+                </Modal>
                 </>
             ) : (
 

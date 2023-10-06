@@ -22,7 +22,7 @@ const DangerInput = () => {
         {/* Componente padre */}
         <Form.Range value={value} onChange={handleChange}/>
 
-        {/* Componente padre */}
+        {/* Componente hijo */}
         <DangerBar value={value}/>
 
     </div>

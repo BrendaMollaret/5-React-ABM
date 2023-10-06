@@ -9,7 +9,7 @@ type DangerBarProps = {
 //El componente hijo tiene "argumentos" del tipo "DangerBarProps"
 const DangerBar = ({value}:DangerBarProps) => {
 
-    //Logica segun el valor recibido del componente padre se mostrara un color diferente
+    //Logica según el valor recibido del componente padre se mostrara un color diferente
     const getVariant = (value:number) => {
         if (value < 30) {
             return 'sucess';

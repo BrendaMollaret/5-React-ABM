@@ -139,7 +139,7 @@ const handleDelete = async () => {
                     {/*"Formulario"*/}
                     <Form onSubmit={formik.handleSubmit}>
                         
-                    {"Titulo"}
+                    {/*"Titulo"*/}
                         <Form.Group controlId="formTitulo">
                             <Form.Label>Titulo</Form.Label>
                             <Form.Control

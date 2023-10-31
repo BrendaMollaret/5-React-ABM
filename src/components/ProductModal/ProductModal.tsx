@@ -136,7 +136,7 @@ const handleDelete = async () => {
 
                     <Modal.Body>
 
-                    {"Formulario"}
+                    {/*"Formulario"*/}
                     <Form onSubmit={formik.handleSubmit}>
                         
                     {"Titulo"}
@@ -157,7 +157,7 @@ const handleDelete = async () => {
                         </Form.Group>
 
 
-                    {"Precio"}                    
+                    {/*"Precio"*/}                    
                         <Form.Group controlId="formPrice">
                             <Form.Label>Precio</Form.Label>
                             <Form.Control
@@ -175,7 +175,7 @@ const handleDelete = async () => {
                         </Form.Group>
 
 
-                    {"Descripción"}                
+                    {/*"Descripción"*/}                
                         <Form.Group controlId="formDescription">
                             <Form.Label>Descripcion</Form.Label>
                             <Form.Control
@@ -192,7 +192,7 @@ const handleDelete = async () => {
                              </Form.Control.Feedback>
                         </Form.Group>
                     
-                    {"Categoria"}                
+                    {/*"Categoria"*/}                
                         <Form.Group controlId="formCategory">
                             <Form.Label>Categoria</Form.Label>
                             <Form.Control
@@ -209,7 +209,7 @@ const handleDelete = async () => {
                              </Form.Control.Feedback>
                         </Form.Group>
                     
-                    {"Imagen"}                
+                    {/*"Imagen"*/}                
                         <Form.Group controlId="formImage">
                             <Form.Label>Imagen</Form.Label>
                             <Form.Control

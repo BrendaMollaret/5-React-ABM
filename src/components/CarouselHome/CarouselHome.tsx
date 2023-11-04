@@ -37,9 +37,9 @@ const CarouselHome = () => {
       style={{maxHeight: "500px", objectFit: 'cover'}}
       src="https://i.pinimg.com/564x/d9/cf/27/d9cf27659fbd89db5d31babef06d4baa.jpg" alt="slide3" />
       <Carousel.Caption>
-        <h3>Third slide label</h3>
+        <h3>Somos el mejor equipo de Aplicaciones Agiles</h3>
         <p>
-          Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+          Te Brindamos todo el ascesorameinto en Desarrollo de Software
         </p>
       </Carousel.Caption>
     </Carousel.Item>
